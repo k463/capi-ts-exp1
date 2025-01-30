@@ -6,11 +6,12 @@ export GEN_COMMIT=b461333bb57fa2dc2152f939ed70bac3cef2c1f6
 # CAPI doesn't publish a swagger.json so we rely on pre-downloaded specs
 export OPENAPI_SKIP_FETCH_SPEC=true
 
-# These don't matter as we're not downloading the specs
+# This doesn't matter as we're not downloading the specs
 # GitHub username/organization to clone kubernetes repo from.
 #export USERNAME=kubernetes
+
 # Kubernetes branch/tag to get the OpenAPI spec from.
-#export KUBERNETES_BRANCH="v1.32.0"
+export KUBERNETES_BRANCH="v1.32.0"
 
 # client version for packaging and releasing. It can
 # be different than SPEC_VERSION.

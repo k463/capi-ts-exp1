@@ -4,7 +4,8 @@ set -euo pipefail
 
 function generateSpec() { # inDir outFile
   mkdir -p "$(dirname "${2:?specify outFile}")"
-  npx --package=crdtoapi -- crdtoapi --in "${1:?specify inDir}" --out "$2"
+  npx --package=crdtoapi -- crdtoapi \
+    --apiVersion "$(date +%Y%m%d%H%M%S)" --in "${1:?specify inDir}" --out "$2"
 }
 
 function main() {
