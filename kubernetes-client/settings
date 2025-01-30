@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# kubernetes-client/gen commit to use for code generation.
+export GEN_COMMIT=b461333bb57fa2dc2152f939ed70bac3cef2c1f6
+
+# CAPI doesn't publish a swagger.json so we rely on pre-downloaded specs
+export OPENAPI_SKIP_FETCH_SPEC=true
+
+# These don't matter as we're not downloading the specs
+# GitHub username/organization to clone kubernetes repo from.
+#export USERNAME=kubernetes
+# Kubernetes branch/tag to get the OpenAPI spec from.
+#export KUBERNETES_BRANCH="v1.32.0"
+
+# client version for packaging and releasing. It can
+# be different than SPEC_VERSION.
+export CLIENT_VERSION="0.8-SNAPSHOT"
+
+# Name of the release package
+export PACKAGE_NAME="@cluster-api/node-client"
+
+export OPENAPI_GENERATOR_COMMIT=06f0b68eeecf61f0a78e1a1db6f7db67c2872e4b
