@@ -6,6 +6,9 @@ function generateSpec() { # inDir outFile
   mkdir -p "$(dirname "${2:?specify outFile}")"
   npx --package=crdtoapi -- crdtoapi \
     --apiVersion "$(date +%Y%m%d%H%M%S)" --in "${1:?specify inDir}" --out "$2"
+  # ctdtoapi doesn't include `paths` field which is required here:
+  # https://github.com/kubernetes-client/gen/blob/b461333bb57fa2dc2152f939ed70bac3cef2c1f6/openapi/preprocess_spec.py#L164
+  yq e --inplace '.paths = {}' "$2"
 }
 
 function main() {
